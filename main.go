@@ -35,6 +35,9 @@ func main() {
 	} else {
 		fmt.Println("key2", val2)
 	}
+
+	val3, err := rdb.SIsMember(ctx, "key3", "abc").Result()
+	fmt.Println(val3)
 	// Output: key value
 	// key2 does not exist
 }

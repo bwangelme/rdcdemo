@@ -5,6 +5,14 @@ go-redis Client 源码阅读
 
 + `options.PoolSize` 可以指定连接池中最大的连接数，默认是 `runtime.GOMAXPROCS * 10`
 + `options.MinIdleConns` 指定连接池中最少的空闲连接数
++ `options.MaxRetries` 连接失败后的最大重试次数
++ `options.MinRetryBackoff` 重试之间的最小等待时间
++ `options.MaxRetryBackoff` 重试之间的最大等待时间
++ `options.DialTimeout` 连接超时
++ `options.ReadTimeout` 读超时
++ `options.WriteTimeout` 写超时
++ `options.MinIdleConns` 最小空闲连接数
++ `options.MaxConnAge` 连接的存活时间
 
 ## 连接的建立和删除
 
