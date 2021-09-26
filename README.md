@@ -1,6 +1,8 @@
 go-redis Client 源码阅读
 ====
 
+> 基于 8.11.3 版本
+
 ## 连接池
 
 + `options.PoolSize` 可以指定连接池中最大的连接数，默认是 `runtime.GOMAXPROCS * 10`
