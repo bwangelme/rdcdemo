@@ -22,7 +22,7 @@ go-redis Client 源码阅读
 vendor/github.com/go-redis/redis/v8/command.go
 1. 每次执行 Redis 命令的时候，会创建一个 [Cmd](vendor/github.com/go-redis/redis/v8/command.go#L184) 对象，然后将这个对象传递给 Redis 客户端中的 `cmdable` 属性函数，由它来执行具体的操作
 2. 获取和释放连接在 [withConn](vendor/github.com/go-redis/redis/v8/redis.go#L271) 函数中进行，连接池中的连接对象并未进行过初始化，执行了 [initConn](vendor/github.com/go-redis/redis/v8/redis.go#L283) 函数的连接后，才真正和 redis 服务器建立了连接。
-3. cmdable 函数执行完成后，会释放连接会连接池中。具体逻辑在 [releaseConn](vendor/github.com/go-redis/redis/v8/redis.go:271)
+3. cmdable 函数执行完成后，会释放连接会连接池中。具体逻辑在 [releaseConn](vendor/github.com/go-redis/redis/v8/redis.go#L271)
 
 ## 失败重试逻辑
 
